@@ -1,9 +1,13 @@
 import './App.css'
+import Hero from './components/Hero'
 
 function App() {
   return(
-      <main>
-          <h2 className='text-violet-500 text-5xl capitalize font-robert-medium font-bold'>welcome in i enterly website</h2>
+      <main className='w-screen min-h-screen relative overflow-x-hidden'>
+        <Hero />
+        <section className='z-0 min-h-screen bg-blue-500'>
+
+        </section>
       </main>
   )
 }
