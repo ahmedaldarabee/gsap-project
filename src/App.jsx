@@ -2,10 +2,12 @@
 import './App.css'
 import About from './components/About'
 import Hero from './components/Hero'
+import Navbar from './components/Navbar'
 
 function App() {
   return(
-      <main className='w-screen min-h-screen relative overflow-x-hidden'>
+      <main className='w-screen min-h-screen relative overflow-x-hidden bg-zinc-600'>
+        <Navbar />
         <Hero />
         <About />
       </main>
