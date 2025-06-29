@@ -1,13 +1,13 @@
+/* eslint-disable no-unused-vars */
 import './App.css'
+import About from './components/About'
 import Hero from './components/Hero'
 
 function App() {
   return(
       <main className='w-screen min-h-screen relative overflow-x-hidden'>
         <Hero />
-        <section className='z-0 min-h-screen bg-blue-500'>
-
-        </section>
+        <About />
       </main>
   )
 }

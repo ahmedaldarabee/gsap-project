@@ -48,9 +48,6 @@ body {
 
 /* custom classes */
 @layer utilities {
-    .border-hsla {
-        @apply border border-white/20;
-    }
 
     .nav-hover-btn {
         @apply relative ms-10 font-general text-xs uppercase text-blue-50 after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-neutral-800 after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
@@ -72,39 +69,32 @@ body {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
     
-    .special-font b {
-        font-family: "Zentry";
-        font-feature-settings: "ss01" on;
-    }
-    
     .hero-heading {
         @apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
     }
 
-    /* 
-
     .about-subtext {
         @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
-    } */
-
-    /* .about-image {
+    } 
+    
+    .about-image {
         @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
     }
-
+    
     .animated-title {
         @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
     }
 
     .animated-word {
-        @apply special-font font-zentry font-black opacity-0;
+        @apply font-zentry font-black opacity-0;
         transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg);
         transform-origin: 50% 50% -150px !important;
         will-change: opacity, transform;
-    } */
-
-    /* .bento-tilt_1 {
-        @apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
     }
+
+    .bento-tilt_1 {
+        @apply relative col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    } 
 
     .bento-tilt_2 {
         @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
@@ -117,7 +107,7 @@ body {
     .story-img-container {
         @apply relative md:h-dvh h-[90vh] w-full;
         filter: url("#flt_tag");
-    } */
+    } 
 
     .story-img-mask {
         @apply absolute left-0 top-0 size-full overflow-hidden md:left-[20%] md:top-[-10%] md:size-4/5;
