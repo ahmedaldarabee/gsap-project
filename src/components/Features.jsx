@@ -3,18 +3,20 @@ import React, { useRef, useState } from 'react'
 import { TiLocationArrow } from 'react-icons/ti';
 
 // For what this component?
+// Like a wrapper to each card
 export const BentoTile = ({children , className = ""}) => {
     const [transformStyle, setTransformStyle] = useState("");
     
     // Why we think about using useRef in general
     const itemRef = useRef(null);
 
-    // What do ease section in the next function
+    // What do each section in the next function
     const handleMouseMove = (e) => {
         if(!itemRef.current) return;
-
+        // getBoundingClientRect: to know the four directions about element
         const {left,top,width,height} = itemRef.current.getBoundingClientRect();
 
+        // clientX,Y: current mouse in x and y axis in screen
         const relativeX = (e.clientX - left) / width;
         const relativeY = (e.clientY - top) / height;
 
@@ -22,6 +24,7 @@ export const BentoTile = ({children , className = ""}) => {
         const tiltY = (relativeX - 0.5) * -5;
 
         // perspective for what?
+            // to add 3D animation
         const newTransform = `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(.95,.95,.95)`;
         setTransformStyle(newTransform);
     };
@@ -50,12 +53,9 @@ export const BentoCard = ({src, title, description, isComingSoon }) => {
 
     const handleMouseMove = (e) => {
         if(!hoverButtonRef.current) return;
-        
-        // What this line mean and do?
         const rect = hoverButtonRef.current.getBoundingClientRect();
 
-        setCursorPosition({
-            // What is the -> clientX,Y ?
+        setCursorPosition({ 
             x: e.clientX - rect.left,
             y: e.clientY - rect.top,
         });
@@ -124,8 +124,7 @@ const Features = () => {
                 </div>
 
                 <BentoTile className='border-fuchsia-50 relative mb-7 h-96 w-full overflow-hidden rounded-md md:h-[65vh]'>
-                    {/* what the value of isComingSoon in the next component */}
-                    {/* and why there is no define value to it? */}
+                    {/* isComingSoon: default value to it be as true */}
                     <BentoCard
                         src="videos/feature-1.mp4"
                         title={ <>radia<b>n</b>t </> }
@@ -185,5 +184,11 @@ const Features = () => {
         </section>
     )
 }
+
+/**
+    Another Question
+    Is the return values : x,y,width,hight,top,right,bottom,left from hoverButtonRef.current.getBoundingClientRect(); [ Yes ]
+    Is ms-32 refer as providing a margin in the left of the element like ml and me-14 same think but margin to the right [ Yes, but more dynamic ]
+*/
 
 export default Features
