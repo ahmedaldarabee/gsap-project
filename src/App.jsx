@@ -11,7 +11,7 @@ import Story from './components/Story'
 
 function App() {
   return(
-      <main className='w-screen min-h-screen relative overflow-x-hidden bg-zinc-600'>
+      <main className='w-screen min-h-screen relative overflow-x-hidden bg-amber-50'>
         <Navbar />
         <Hero />
         <About />
