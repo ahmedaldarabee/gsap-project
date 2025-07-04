@@ -153,8 +153,8 @@ const Features = () => {
           />
         </BentoTile>
 
-        <div className="flex flex-col">
-          <BentoTile className="uppercase md:text-6xl text-4xl text-black w-full h-[60vh] md:w-1/2">
+        <div className="flex flex-col lg:flex-row flex-wrap">
+          <BentoTile className="uppercase md:text-6xl text-4xl text-black w-full h-[60vh] lg:w-1/2">
             <BentoCard
               src="videos/feature-2.mp4"
               title={
@@ -167,9 +167,8 @@ const Features = () => {
               dark
             />
           </BentoTile>
-
           {/* What mean ms-32 and ms-0 */}
-          <BentoTile className="uppercase md:text-6xl text-4xl text-black w-full h-[60vh] md:w-1/2">
+          <BentoTile className="uppercase md:text-6xl text-4xl text-black w-full h-[60vh] lg:w-1/2">
             <BentoCard
               src="videos/feature-3.mp4"
               title={
@@ -181,9 +180,8 @@ const Features = () => {
               isComingSoon
             />
           </BentoTile>
-
           {/* me-14 */}
-          <BentoTile className="w-full h-[60vh] md:w-1/2">
+          <BentoTile className="w-full h-[60vh] lg:w-1/2">
             <BentoCard
               src="videos/feature-4.mp4"
               title={
@@ -195,8 +193,20 @@ const Features = () => {
               isComingSoon
             />
           </BentoTile>
-
-          <BentoTile className="bento-tilt_2">
+          {/* me-14 */}
+          <BentoTile className="w-full h-[60vh] lg:w-1/2">
+            <BentoCard
+              src="videos/feature-4.mp4"
+              title={
+                <>
+                  az<b>u</b>l
+                </>
+              }
+              description="A cross-world AI Agent - elevating your gameplay to be more fun and productive."
+              isComingSoon
+            />
+          </BentoTile>
+          <BentoTile className="bento-tilt_2 lg:w-full">
             <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
               <h1 className="bento-title max-w-64 text-black">
                 {" "}
@@ -205,8 +215,7 @@ const Features = () => {
               <TiLocationArrow className="m-5 scale-[5] self-end" />
             </div>
           </BentoTile>
-
-          <BentoTile className="bento-tilt_2">
+          <BentoTile className="bento-tilt_2 w-full">
             <video
               src="videos/feature-5.mp4"
               loop
