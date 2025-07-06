@@ -6,9 +6,11 @@ import { useWindowScroll } from 'react-use';
 import Button from './Button'
 import { TiLocationArrow } from 'react-icons/ti';
 import clsx from 'clsx';
+import { FaShoppingCart } from 'react-icons/fa';
+import { BsDot } from 'react-icons/bs';
 // Question 1:
     //  1.1 Is exist here to avoid re-created after each re-render? [Yes]
-const navItem = ["Nexus", "Vault", "Prologue", "About", "Contact"];
+const navItem = ["ahmad","Events"];
 
 const Navbar = () => {
     // State for toggling audio and visual indicator if be run to not!
@@ -102,11 +104,22 @@ const Navbar = () => {
                     {/* second bar as navigation links and audio button  */}
                     <div className='flex h-full items-center'>
                         {/* Links */}
-                        <div className='hidden md:block'>
+                        <div className='flex flex-row gap-6 text-sm font-circular-web text-white'>
                             {navItem.map((item,idx) => (
-                                    <a  key={idx} href={`#${item.toLowerCase()}`} className='nav-hover-btn'> {item} </a>
+                                    <a  key={idx} href={`#${item.toLowerCase()}`} className='text red group relative overflow-hidden pb-1'> {item} <span className='absolute w-full h-[0.5px] bg-white right-full bottom-1 group-hover:right-0 transition-all duration-300'></span> </a>
                                 ))
                             }
+                            <a className='hover:scale-110 relative group transition-all hover:rotate-3' href={"/store"}><FaShoppingCart className='inline'/> Store
+                             <span className='absolute top-1/2 left-[8px] -translate-1/2 opacity-0 group-hover:-top-2 group-hover:opacity-100 transition-all duration-500'>
+                             <BsDot size={28} />
+                             </span>
+                             <span className='absolute top-1/2 left-[7px] -translate-1/2 opacity-0 group-hover:-top-1 group-hover:left-[20px] group-hover:opacity-100 transition-all duration-500'>
+                             <BsDot size={28} />
+                             </span>
+                             <span className='absolute top-1/2 left-[7px] -translate-1/2 opacity-0 group-hover:-top-1 group-hover:-left-[5px] group-hover:opacity-100 transition-all duration-500'>
+                             <BsDot size={28} />
+                             </span>
+                             </a>
                         </div>
 
                         {/* audio button */}
